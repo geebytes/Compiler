@@ -1,5 +1,4 @@
 #include "LexicalAnalyzer.h"
-#include "LexicalAnalyzer.h"
 #include <fstream>
 #include <stdio.h>
 #include <iostream>
@@ -7,25 +6,26 @@
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
 #include <boost/regex.hpp>
+#include <regex>
+#include <iterator>
 
-using namespace std;
-using namespace boost;
 
 LexicalAnalyzer::LexicalAnalyzer() {
 
 }
 
-/**--------------------------------------------------------------------------------------------------
- * \fn int LexicalAnalyzer::read_seed_code(const string file_path)
- *
- * \brief 读取种别码配置文件，生成种别码字典
- *
- * \date 2018/5/25
- *
- * \param file_path 种别码配置文件路径
- *
- * \return 成功返回0失败返回-1
- *-----------------------------------------------------------------------------------------------**/
+
+///=================================================================================================
+/// \fn int LexicalAnalyzer::read_seed_code(const string file_path)
+///
+/// \brief 读取种别码配置文件，生成种别码字典
+///
+/// \date 2018/5/25
+///
+/// \param file_path 种别码配置文件路径
+///
+/// \return 成功返回0失败返回-1
+///=================================================================================================
 
 int LexicalAnalyzer::read_seed_code(const string file_path) {
     ifstream open_file(file_path);
@@ -36,7 +36,7 @@ int LexicalAnalyzer::read_seed_code(const string file_path) {
         return -1;
     }
     while (getline(open_file, seed_code_str)) { //按行读取
-        split(seed_code_vec, seed_code_str, is_any_of("\t"), token_compress_on);
+        boost::split(seed_code_vec, seed_code_str, boost::is_any_of("\t"), boost::token_compress_on);
         seed_code_dict[seed_code_vec[0]] = seed_code_vec[1];//生成字典映射
         seed_code_vec.clear();
     }
@@ -44,13 +44,13 @@ int LexicalAnalyzer::read_seed_code(const string file_path) {
     return 0;
 }
 
-/**--------------------------------------------------------------------------------------------------
- * \fn void LexicalAnalyzer::output_seed_code()
- *
- * \brief 输出种别码字典
- *
- * \date 2018/5/25
- *-----------------------------------------------------------------------------------------------**/
+///=================================================================================================
+/// \fn void LexicalAnalyzer::output_seed_code()
+///
+/// \brief 输出种别码字典
+///
+/// \date 2018/5/25
+///=================================================================================================
 
 void LexicalAnalyzer::output_seed_code() {
     map<string, string>::iterator iter;
@@ -59,17 +59,17 @@ void LexicalAnalyzer::output_seed_code() {
     }
 }
 
-/**--------------------------------------------------------------------------------------------------
- * \fn int LexicalAnalyzer::read_source_code(const string file_path)
- *
- * \brief 读取源代码存入内存
- *
- * \date 2018/5/25
- *
- * \param file_path 源代码文件路径
- *
- * \return 成功返回0失败返回-1
- *-----------------------------------------------------------------------------------------------**/
+///=================================================================================================
+/// \fn int LexicalAnalyzer::read_source_code(const string file_path)
+///
+/// \brief 读取源代码存入内存.
+///
+/// \date 2018/5/25
+///
+/// \param file_path 源代码文件路径.
+///
+/// \return 成功返回0失败返回-1.
+///=================================================================================================
 
 int LexicalAnalyzer::read_source_code(const string file_path) {
     ifstream open_file(file_path);
@@ -79,35 +79,58 @@ int LexicalAnalyzer::read_source_code(const string file_path) {
     }
     source_code = string((std::istreambuf_iterator<char>(open_file)),
                          std::istreambuf_iterator<char>()); //一次性读取源代码存入内存
-    //cout << source_code << endl;
     origin_source_code = source_code;
     return 0;
 
 }
 
-/**
- * \fn string LexicalAnalyzer::get_origin_code()
- *
- * \brief 获取原始未经处理的代码.
- *
- * \date 2018/5/25
- *
- * \return 原始代码.
- */
+///=================================================================================================
+/// \fn void LexicalAnalyzer::remove_space()
+///
+/// \brief 利用正则表达式除去多余的空格包括回车、换行、制表
+///
+/// \date 2018/5/25
+///=================================================================================================
+
+void LexicalAnalyzer::remove_space() {
+    string reg_str = "\\s*|\t|\r|\n";
+    std::regex reg(reg_str);
+    string::const_iterator start = source_code.begin(), end = source_code.end();
+    source_code = std::regex_replace(source_code, reg, "");
+    std::cout << source_code;
+}
+
+void LexicalAnalyzer::scan_code() {
+
+}
+
+void LexicalAnalyzer::lookup() {
+
+}
+
+///=================================================================================================
+/// \fn string LexicalAnalyzer::get_origin_code()
+///
+/// \brief 获取原始未经处理的代码.
+///
+/// \date 2018/5/25
+///
+/// \return 原始代码.
+///=================================================================================================
 
 string LexicalAnalyzer::get_origin_code() {
     return origin_source_code;
 }
 
-/**--------------------------------------------------------------------------------------------------
- * \fn int LexicalAnalyzer::delete_comment()
- *
- * \brief 删除源代码中的注释部分
- *
- * \date 2018/5/25
- *
- * \return 成功返回0失败返回-1
- *-----------------------------------------------------------------------------------------------**/
+///=================================================================================================
+/// \fn int LexicalAnalyzer::delete_comment()
+///
+/// \brief 利用正则表达式删除源代码中的注释部分
+///
+/// \date 2018/5/25
+///
+/// \return 0
+///=================================================================================================
 
 int LexicalAnalyzer::delete_comment() {
     string reg_str = "('(?:[^\\\\']|\\\\.)*'|\"(?:[^\\\\\"]|\\\\.)*\")|" //跳过" "/' '部分
@@ -135,13 +158,8 @@ int LexicalAnalyzer::delete_comment() {
             flags |= boost::match_not_bob;
         }
     }
-    cout << source_code;
+    //cout << source_code;
     return 0;
-}
-
-int LexicalAnalyzer::getnb() {
-    return 0;
-
 }
 
 LexicalAnalyzer::~LexicalAnalyzer() {

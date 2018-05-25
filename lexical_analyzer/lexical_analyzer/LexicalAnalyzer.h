@@ -11,7 +11,6 @@
  * \note
 */
 
-
 #ifndef LEXICALANALYER
 #define LEXICALANALYER
 #include <map>
@@ -41,9 +40,11 @@ class LexicalAnalyzer {
     int read_seed_code(const string file_path);
     void output_seed_code();
     int read_source_code(const string file_path);
+    void remove_space();
+    void scan_code();
+    void lookup();
     string get_origin_code();
     int delete_comment();
-    int getnb();
     ~LexicalAnalyzer();
   protected:
 
