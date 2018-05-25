@@ -18,7 +18,7 @@
 #include <string>
 using namespace std;
 /*!
- * \class classname
+ * \class LexicalAnalyzer
  *
  *
  * \brief
@@ -40,12 +40,16 @@ class LexicalAnalyzer {
     LexicalAnalyzer();
     int read_seed_code(const string file_path);
     void output_seed_code();
+    int read_source_code(const string file_path);
+    int getnb();
     ~LexicalAnalyzer();
   protected:
 
   private:
     ///种别码字典
     map<string, string> seed_code_dict;
+    ///源代码
+    string source_code;
 };
 #endif
 

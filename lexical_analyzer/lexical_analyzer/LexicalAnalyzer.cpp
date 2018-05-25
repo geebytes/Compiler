@@ -2,6 +2,7 @@
 #include "LexicalAnalyzer.h"
 #include <fstream>
 #include <stdio.h>
+#include <iostream>
 #include <vector>
 #include <boost/algorithm/string/split.hpp>
 #include <boost/algorithm/string/classification.hpp>
@@ -34,6 +35,24 @@ void LexicalAnalyzer::output_seed_code() {
     for (iter = seed_code_dict.begin(); iter != seed_code_dict.end(); iter++) {
         printf("%s\t%s\n", iter->first.c_str(), iter->second.c_str());
     }
+}
+
+int LexicalAnalyzer::read_source_code(const string file_path) {
+    ifstream open_file(file_path);
+    if (!open_file.is_open()) {
+        printf("The seed code file open fail\n");
+        return -1;
+    }
+    source_code = string((std::istreambuf_iterator<char>(open_file)),
+                         std::istreambuf_iterator<char>());
+    cout << source_code << endl;
+    return 0;
+
+}
+
+int LexicalAnalyzer::getnb() {
+    return 0;
+
 }
 
 LexicalAnalyzer::~LexicalAnalyzer() {
