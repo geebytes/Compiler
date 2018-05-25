@@ -41,6 +41,8 @@ class LexicalAnalyzer {
     int read_seed_code(const string file_path);
     void output_seed_code();
     int read_source_code(const string file_path);
+    string get_origin_code();
+    int delete_comment();
     int getnb();
     ~LexicalAnalyzer();
   protected:
@@ -48,8 +50,12 @@ class LexicalAnalyzer {
   private:
     ///种别码字典
     map<string, string> seed_code_dict;
-    ///源代码
+
+    ///待处理的源代码
     string source_code;
+
+    ///原始代码
+    string origin_source_code;
 };
 #endif
 
