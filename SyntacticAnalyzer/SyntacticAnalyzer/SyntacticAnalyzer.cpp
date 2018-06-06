@@ -559,7 +559,7 @@ void SyntacticAnalyzer::check_expression(string exp, int record_index) {
         ui.output_text->append(QString("<html><p><a href=\"goto://setp?record_index=%1\">%2</a></p></html>").arg(record_index).arg(QString::fromStdString(exp)));
     else
         ui.output_text->append(QString::fromStdString(exp));
-    for (it; it != end; it++) {
+    for (it; it != end; it++) { //¸ßÁÁ´íÎó
         flag = false;
 
         QTextCursor cursor(ui.output_text->document());

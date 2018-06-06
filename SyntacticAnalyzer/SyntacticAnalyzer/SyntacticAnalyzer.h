@@ -31,6 +31,8 @@
 #include <QUrlQuery>
 #include <QMessageBox>
 using namespace std;
+
+
 class SyntacticAnalyzer : public QMainWindow {
     Q_OBJECT
 
