@@ -41,3 +41,4 @@ target_wrapper.*
 
 # QtCreator CMake
 CMakeLists.txt.user*
+/SyntacticAnalyzer/.vs/SyntacticAnalyzer/v15/Browse.VC.db

@@ -19,7 +19,7 @@ SyntacticAnalyzer::SyntacticAnalyzer(QWidget *parent)
 
 void SyntacticAnalyzer::init() {
     settings = new QSettings("config.ini", QSettings::IniFormat);
-    get_settings();
+    get_settings(); //读取配置信息
     cfg = new Config();
     input = new InputInfo();
     last_first_model = new TableModel;
@@ -28,11 +28,11 @@ void SyntacticAnalyzer::init() {
     info_type = -1;
     ui.lastView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui.tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    update_input();
-    exp_check.get_grammar(grammars);
-    exp_check.get_terminal_symbol(terminal_symbols);
-    exp_check.make_priority_table();
-    connect_signal_slot();
+    update_input(); //更新信息
+    exp_check.get_grammar(grammars); //获取文法
+    exp_check.get_terminal_symbol(terminal_symbols); //获取终结符集合
+    exp_check.make_priority_table(); //生成优先关系表
+    connect_signal_slot(); //连接信号与槽
     set_first_last();
     set_prority_table();
     show_last_first();
@@ -94,6 +94,7 @@ void SyntacticAnalyzer::connect_signal_slot() {
     connect(input, SIGNAL(finish()), this, SLOT(input_finish()));
     connect(ui.output_text, SIGNAL(anchorClicked(const QUrl&)), this, SLOT(show_step(const QUrl&)));
 }
+
 SyntacticAnalyzer::~SyntacticAnalyzer() {
     delete settings;
     delete cfg;

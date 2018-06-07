@@ -32,6 +32,13 @@
 #include <QMessageBox>
 using namespace std;
 
+///=================================================================================================
+/// \class SyntacticAnalyzer
+///
+/// \brief A syntactic analyzer.
+///
+/// \date 2018/6/7
+///=================================================================================================
 
 class SyntacticAnalyzer : public QMainWindow {
     Q_OBJECT
@@ -121,7 +128,6 @@ class SyntacticAnalyzer : public QMainWindow {
 
     /// \brief 分析过程
     AnalysisStep *analysis_setp;
-
 
     /// \brief 输入的信息类型，0为文法，1为表达式，2为终结符
     int info_type;

@@ -68,7 +68,7 @@ void ExpressionCheck::make_priority_table() {
 /// \date 2018/6/3
 ///
 /// \param left_prime_phrase 最左素短语
-/// \param normalize_char    规约的符号
+/// \param normalize_char    归约的符号
 ///
 /// \return 错误代码
 ///=================================================================================================
@@ -145,19 +145,19 @@ char ExpressionCheck::skip_no_terminal(char top_value) {
 }
 
 ///=================================================================================================
-/// \fn char ExpressionCheck::normalization(char top_value, char exp_value)
+/// \fn char ExpressionCheck::reduction(char top_value, char exp_value)
 ///
-/// \brief 规约
+/// \brief 归约
 ///
 /// \date 2018/6/3
 ///
 /// \param top_value 栈顶元素
 /// \param exp_value 表达式串当前的首字符
 ///
-/// \return 规约后的栈顶元素
+/// \return 归约后的栈顶元素
 ///=================================================================================================
 
-char ExpressionCheck::normalization(char top_value, char exp_value) {
+char ExpressionCheck::reduction(char top_value, char exp_value) {
     char q = top_value; //栈顶元素，最左素短语的第一个非终结符
     char a = exp_value; //输入串首
     char p = top_value;
@@ -175,7 +175,7 @@ char ExpressionCheck::normalization(char top_value, char exp_value) {
             reverse(left_prime_phrase.begin(), left_prime_phrase.end()); //最左素短语的反转
 
             top_value = symbols_stack.top(); //更新栈顶元素
-            if (match_production_left(left_prime_phrase)) { //是否满足规约的条件
+            if (match_production_left(left_prime_phrase)) { //是否满足归约的条件
                 symbols_stack.push('V'); //替换最左素短语
                 is_move = false; //不移进
                 left_phrase = left_prime_phrase; //满足条件的最左素短语
@@ -309,7 +309,7 @@ int ExpressionCheck::check_expression(string expression) {
             error_record[expression_index] = error_info[EXP_NO_OPERATOR];
         }
         save_analysis_step(index, table[make_pair(top_value, a)], left_phrase, "移进");
-        top_value = normalization(q, a); //归约操作
+        top_value = reduction(q, a); //归约操作
         if (!left_phrase.empty()) { //归约
             save_analysis_step(index, table[make_pair(top_value, a)], left_phrase, "归约");
             left_phrase.clear();
@@ -327,7 +327,7 @@ int ExpressionCheck::check_expression(string expression) {
         top_value = symbols_stack.top();
         top_value = skip_no_terminal(top_value);
 
-        normalization(top_value, '#');
+        reduction(top_value, '#');
         save_analysis_step(index, '>', left_phrase, "归约");
 
     }

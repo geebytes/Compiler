@@ -157,8 +157,8 @@ class ExpressionCheck {
     //跳过非终结符
     char skip_no_terminal(char top_value);
 
-    //规约
-    char normalization(char top_value, char exp_value);
+    //归约
+    char reduction(char top_value, char exp_value);
 
     //产生式标准化
     void production_to_std();
