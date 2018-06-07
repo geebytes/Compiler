@@ -147,7 +147,7 @@ char ExpressionCheck::skip_no_terminal(char top_value) {
 ///=================================================================================================
 /// \fn char ExpressionCheck::reduction(char top_value, char exp_value)
 ///
-/// \brief 归约
+/// \brief 归约操作
 ///
 /// \date 2018/6/3
 ///
@@ -328,16 +328,18 @@ int ExpressionCheck::check_expression(string expression) {
         top_value = skip_no_terminal(top_value);
 
         reduction(top_value, '#');
-        save_analysis_step(index, '>', left_phrase, "归约");
+        if (!left_phrase.empty())
+            save_analysis_step(index, '>', left_phrase, "归约");
 
     }
+    left_phrase.clear();
     if (terminal_symbols.find(symbols_stack.top()) != terminal_symbols.end() || symbols_stack.top() == '#') {
         if(error_record.find(expression_index) == error_record.end())
-            error_record[expression_index] = error_info[EXPRESSION_ERROR];
+            error_record[expression_index] = error_info[EXPRESSION_ERROR]; //运算符间缺少表达式
         save_analysis_step(index, ' ', left_phrase, "错误");
 
     } else
-        save_analysis_step(index, ' ', left_phrase, "正确");
+        save_analysis_step(index, ' ', left_phrase, "结束");
     setp = 0;
     return 0;
 }
