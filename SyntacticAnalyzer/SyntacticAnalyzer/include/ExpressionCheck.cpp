@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "ExpressionCheck.h"
 #include <regex>
 #include <iterator>
@@ -9,10 +10,10 @@ ExpressionCheck::ExpressionCheck() {
     error_info.push_back("缺少表达式"); //eg.
     error_info.push_back("表达式间缺少运算符"); //eg .ii
     error_info.push_back("括号间无表达式"); //eg.()
-    error_info.push_back("非法左括号");
+    error_info.push_back("缺少右括号");
     error_info.push_back("表达式间缺少运算符"); //eg. )(
     error_info.push_back("正确");
-    error_info.push_back("非法右括号");
+    error_info.push_back("缺少左括号");
     expression_index = 0;
     setp = 1;
 }
@@ -259,10 +260,6 @@ bool ExpressionCheck::match_production_left(string right_str) {
 
 void ExpressionCheck::save_analysis_step(int index, char prioity, string left, string act) {
     string stack_status = get_stack_status();
-    if (prioity == 0)
-        prioity = '<';
-    boost::format fmt("%-20s|%-20s|%-20s|%-20s|%-20s|%-20s");
-    fmt % setp % stack_status % prioity % expression_str.substr(index) % left % act;
     analysis_info[setp].push_back(stack_status);
     analysis_info[setp].push_back(string("").append(1, prioity));
     analysis_info[setp].push_back(expression_str.substr(index));
@@ -270,6 +267,7 @@ void ExpressionCheck::save_analysis_step(int index, char prioity, string left, s
     analysis_info[setp].push_back(act);
     setp++;
 }
+
 
 ///=================================================================================================
 /// \fn int ExpressionCheck::check_expression(string expression)

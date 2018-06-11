@@ -18,8 +18,6 @@ void AnalysisStep::add_step(map<int, vector<string>> setp) {
     int col = 0;
     for (it; it != end; it++) {
         int size = it->second.size();
-        //qDebug() << "size=" << QString("%1").arg(size);
-        //setp_model->setHeaderData(row, Qt::Vertical, QString("%1").arg(it->first));
         col = 0;
         setp_model->setItem(row, col, new QStandardItem(QString("%1").arg(it->first)));
         str_it = it->second.begin();
@@ -42,12 +40,11 @@ AnalysisStep::~AnalysisStep() {
 }
 
 void AnalysisStep::init_table() {
-    setp_model->setColumnCount(5);
-    //setp_model->setHeaderData(0, Qt::Horizontal, QString::fromLocal8Bit("²½Öè"));
+    setp_model->setColumnCount(5);;
     setp_model->setHeaderData(0, Qt::Horizontal, QString::fromLocal8Bit("·ûºÅÕ»×´Ì¬"));
     setp_model->setHeaderData(1, Qt::Horizontal, QString::fromLocal8Bit("¹ØÏµ"));
     setp_model->setHeaderData(2, Qt::Horizontal, QString::fromLocal8Bit("ÊäÈë´®×´Ì¬"));
-    setp_model->setHeaderData(3, Qt::Horizontal, QString::fromLocal8Bit("×î¶ÌËØ¶ÌÓï"));
+    setp_model->setHeaderData(3, Qt::Horizontal, QString::fromLocal8Bit("×î×óËØ¶ÌÓï"));
     setp_model->setHeaderData(4, Qt::Horizontal, QString::fromLocal8Bit("¶¯×÷"));
     ui.setp_table->setModel(setp_model);
     ui.setp_table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);

@@ -11,6 +11,8 @@
 #include<set>
 #include <map>
 #include <stack>
+#include <cctype>
+#include <boost/algorithm/string/replace.hpp>
 using namespace std;
 
 ///=================================================================================================
@@ -22,25 +24,25 @@ using namespace std;
 
 enum ERROR_CODE {
 
-    ///< 运算符间缺少表达式
+    /// \brief 运算符间缺少表达式
     EXPRESSION_ERROR,
 
-    ///< 表达式间缺少运算符
+    /// \brief 表达式间缺少运算符
     EXP_NO_OPERATOR,
 
-    ///< 括号间无表达式
+    /// \brief 括号间无表达式
     BRACKETS_NO_EXP,
 
-    ///< 非法左括号
+    /// \brief 非法左括号
     INVALID_LEFT_BRACKET,
 
-    ///< 表达式间缺少运算符
+    /// \brief 表达式间缺少运算符
     DEFECT_OPERATOR,
 
-    ///< 正确
+    /// \brief 正确
     OK,
 
-    ///< 非法右括号
+    /// \brief 非法右括号
     INVALID_RIGHT_BRACKET
 };
 
@@ -100,6 +102,7 @@ class ExpressionCheck {
 
     //获取符号栈状态
     string get_stack_status();
+
     ~ExpressionCheck();
   private:
 
@@ -168,6 +171,9 @@ class ExpressionCheck {
 
     //存储分析步骤
     void save_analysis_step(int index, char prioity, string left, string act);
+
+
+
 
 };
 #endif
