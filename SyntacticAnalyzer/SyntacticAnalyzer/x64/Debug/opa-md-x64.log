@@ -1,0 +1,305 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(373,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  stdafx.cpp
+  dllmain.cpp
+  PriorityTable.cpp
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(7): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(64): warning C4251: “PriorityTable::grammars”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Ty=std::string
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(29): note: 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=std::string
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(67): warning C4251: “PriorityTable::terminal_symbols”: class“std::set<char,std::less<_Kty>,std::allocator<char>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(32): note: 参见“std::set<char,std::less<_Kty>,std::allocator<char>>”的声明
+          with
+          [
+              _Kty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(70): warning C4251: “PriorityTable::symbols_stack”: class“std::stack<std::pair<char,char>,std::deque<_Ty,std::allocator<_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Ty=std::pair<char,char>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(70): note: 参见“std::stack<std::pair<char,char>,std::deque<_Ty,std::allocator<_Ty>>>”的声明
+          with
+          [
+              _Ty=std::pair<char,char>
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(73): warning C4251: “PriorityTable::grammars_map”: class“std::map<char,std::vector<std::string,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Ty=std::string,
+              _Kty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(50): note: 参见“std::map<char,std::vector<std::string,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”的声明
+          with
+          [
+              _Ty=std::string,
+              _Kty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(76): warning C4251: “PriorityTable::first”: class“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(56): note: 参见“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(79): warning C4251: “PriorityTable::last”: class“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(56): note: 参见“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(82): warning C4251: “PriorityTable::prioity_table”: class“std::map<std::pair<char,char>,char,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=std::pair<char,char>,
+              _Ty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(53): note: 参见“std::map<std::pair<char,char>,char,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=std::pair<char,char>,
+              _Ty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.cpp(108): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.cpp(447): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.10.25017\include\xutility(2350): warning C4996: 'std::copy::_Unchecked_iterators::_Deprecate': Call to 'std::copy' with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.10.25017\include\xutility(2350): note: 参见“std::copy::_Unchecked_iterators::_Deprecate”的声明
+  e:\lib\boost_1_67_0\boost\algorithm\string\detail\classification.hpp(102): note: 参见对正在编译的函数 模板 实例化“_OutIt *std::copy<const char*,char*>(_InIt,_InIt,_OutIt)”的引用
+          with
+          [
+              _OutIt=char *,
+              _InIt=const char *
+          ]
+  e:\lib\boost_1_67_0\boost\algorithm\string\classification.hpp(206): note: 参见对正在编译的函数 模板 实例化“boost::algorithm::detail::is_any_ofF<char>::is_any_ofF<boost::iterator_range<const char *>>(const RangeT &)”的引用
+          with
+          [
+              RangeT=boost::iterator_range<const char *>
+          ]
+  e:\lib\boost_1_67_0\boost\algorithm\string\classification.hpp(206): note: 参见对正在编译的函数 模板 实例化“boost::algorithm::detail::is_any_ofF<char>::is_any_ofF<boost::iterator_range<const char *>>(const RangeT &)”的引用
+          with
+          [
+              RangeT=boost::iterator_range<const char *>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.cpp(60): note: 参见对正在编译的函数 模板 实例化“boost::algorithm::detail::is_any_ofF<char> boost::algorithm::is_any_of<char[2]>(const RangeT (&))”的引用
+          with
+          [
+              RangeT=char [2]
+          ]
+  ExpressionCheck.cpp
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(7): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(7): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(64): warning C4251: “PriorityTable::grammars”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Ty=std::string
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(29): note: 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=std::string
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(67): warning C4251: “PriorityTable::terminal_symbols”: class“std::set<char,std::less<_Kty>,std::allocator<char>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(32): note: 参见“std::set<char,std::less<_Kty>,std::allocator<char>>”的声明
+          with
+          [
+              _Kty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(70): warning C4251: “PriorityTable::symbols_stack”: class“std::stack<std::pair<char,char>,std::deque<_Ty,std::allocator<_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Ty=std::pair<char,char>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(70): note: 参见“std::stack<std::pair<char,char>,std::deque<_Ty,std::allocator<_Ty>>>”的声明
+          with
+          [
+              _Ty=std::pair<char,char>
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(73): warning C4251: “PriorityTable::grammars_map”: class“std::map<char,std::vector<std::string,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Ty=std::string,
+              _Kty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(50): note: 参见“std::map<char,std::vector<std::string,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”的声明
+          with
+          [
+              _Ty=std::string,
+              _Kty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(76): warning C4251: “PriorityTable::first”: class“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(56): note: 参见“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(79): warning C4251: “PriorityTable::last”: class“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(56): note: 参见“std::map<char,std::set<char,std::less<_Kty>,std::allocator<char>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=char,
+              _Ty=std::set<char,std::less<char>,std::allocator<char>>
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(82): warning C4251: “PriorityTable::prioity_table”: class“std::map<std::pair<char,char>,char,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“PriorityTable”的客户端使用
+          with
+          [
+              _Kty=std::pair<char,char>,
+              _Ty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(53): note: 参见“std::map<std::pair<char,char>,char,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=std::pair<char,char>,
+              _Ty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(113): warning C4251: “ExpressionCheck::grammars”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Ty=std::string
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(29): note: 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=std::string
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(116): warning C4251: “ExpressionCheck::error_info”: class“std::vector<std::string,std::allocator<_Ty>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Ty=std::string
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(29): note: 参见“std::vector<std::string,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Ty=std::string
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(119): warning C4251: “ExpressionCheck::analysis_info”: class“std::map<int,std::vector<std::string,std::allocator<_Ty>>,std::less<int>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Ty=std::string,
+              _Kty=int
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(89): note: 参见“std::map<int,std::vector<std::string,std::allocator<_Ty>>,std::less<int>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”的声明
+          with
+          [
+              _Ty=std::string,
+              _Kty=int
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(122): warning C4251: “ExpressionCheck::error_record”: class“std::map<int,std::string,std::less<int>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Kty=int,
+              _Ty=std::string
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(92): note: 参见“std::map<int,std::string,std::less<int>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=int,
+              _Ty=std::string
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(125): warning C4251: “ExpressionCheck::terminal_symbols”: class“std::set<char,std::less<_Kty>,std::allocator<char>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Kty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(32): note: 参见“std::set<char,std::less<_Kty>,std::allocator<char>>”的声明
+          with
+          [
+              _Kty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(128): warning C4251: “ExpressionCheck::symbols_stack”: class“std::stack<char,std::deque<_Ty,std::allocator<_Ty>>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Ty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(128): note: 参见“std::stack<char,std::deque<_Ty,std::allocator<_Ty>>>”的声明
+          with
+          [
+              _Ty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(131): warning C4251: “ExpressionCheck::table”: class“std::map<std::pair<char,char>,char,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Kty=std::pair<char,char>,
+              _Ty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(53): note: 参见“std::map<std::pair<char,char>,char,std::less<_Kty>,std::allocator<std::pair<const _Kty,_Ty>>>”的声明
+          with
+          [
+              _Kty=std::pair<char,char>,
+              _Ty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(134): warning C4251: “ExpressionCheck::productions”: class“std::map<char,std::vector<std::string,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Ty=std::string,
+              _Kty=char
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\prioritytable.h(50): note: 参见“std::map<char,std::vector<std::string,std::allocator<_Ty>>,std::less<_Kty>,std::allocator<std::pair<const _Kty,std::vector<_Ty,std::allocator<_Ty>>>>>”的声明
+          with
+          [
+              _Ty=std::string,
+              _Kty=char
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(137): warning C4251: “ExpressionCheck::std_left”: class“std::set<std::string,std::less<_Kty>,std::allocator<_Ty>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+  e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(137): note: 参见“std::set<std::string,std::less<_Kty>,std::allocator<_Ty>>”的声明
+          with
+          [
+              _Kty=std::string,
+              _Ty=std::string
+          ]
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(140): warning C4251: “ExpressionCheck::left_prime_phrase”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.10.25017\include\xstring(3997): note: 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(143): warning C4251: “ExpressionCheck::expression_str”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.10.25017\include\xstring(3997): note: 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.h(152): warning C4251: “ExpressionCheck::left_phrase”: class“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口由 class“ExpressionCheck”的客户端使用
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.10.25017\include\xstring(3997): note: 参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.cpp(80): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.cpp(90): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.cpp(91): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.cpp(113): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.cpp(291): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\cppproject\syntacticanalyzer\syntacticanalyzer\expressioncheck.cpp(294): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+    正在创建库 E:\CppProject\SyntacticAnalyzer\SyntacticAnalyzer\lib\operator_precedence_analysisd.lib 和对象 E:\CppProject\SyntacticAnalyzer\SyntacticAnalyzer\lib\operator_precedence_analysisd.exp
+  opa-md-x64.vcxproj -> E:\CppProject\SyntacticAnalyzer\SyntacticAnalyzer\lib\operator_precedence_analysisd.dll
+  opa-md-x64.vcxproj -> E:\CppProject\SyntacticAnalyzer\SyntacticAnalyzer\lib\operator_precedence_analysisd.pdb (Partial PDB)
