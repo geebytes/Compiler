@@ -553,27 +553,39 @@ void SyntacticAnalyzer::check_expression(string exp, int record_index) {
     map<int, string> error = exp_check.get_error();
     map<int, string>::iterator it = error.begin();
     map<int, string>::iterator end = error.end();
-    bool flag = true;
     QString error_info = "";
     if (error.empty()) //表达式生成超链接
         ui.output_text->append(QString("<html><p><a href=\"goto://setp?record_index=%1\">%2</a></p></html>").arg(record_index).arg(QString::fromStdString(exp)));
     else
         ui.output_text->append(QString::fromStdString(exp));
-    for (it; it != end; it++) {
-        flag = false;
+    qDebug() << QString::fromStdString(exp);
+    for (it; it != end; it++) { //高亮错误
 
         QTextCursor cursor(ui.output_text->document());
         QTextCursor cursor_postion(ui.output_text->textCursor());
         QTextCharFormat color_format;
         color_format.setForeground(Qt::red);
         int postion = cursor_postion.position() - (exp.length() - it->first);
-        cursor.setPosition(postion, QTextCursor::KeepAnchor);
-        cursor.movePosition(QTextCursor::NoMove, QTextCursor::KeepAnchor, 1);
+        cursor.setPosition(postion - 1, QTextCursor::MoveAnchor);
+        cursor.movePosition(QTextCursor::NoMove, QTextCursor::MoveAnchor, 0);
+        cursor.insertText(" ");
+        cursor.setPosition(postion + 1, QTextCursor::MoveAnchor);
+        cursor.movePosition(QTextCursor::NoMove, QTextCursor::MoveAnchor, 0);
+        cursor.insertText(" ");
+        postion = cursor_postion.position() - (exp.length() + 2 - it->first);
+        cursor.setPosition(postion, QTextCursor::MoveAnchor);
+        cursor.movePosition(QTextCursor::NoMove, QTextCursor::MoveAnchor, 1);
         cursor.select(QTextCursor::WordUnderCursor);
-        cursor.setCharFormat(color_format);
+        cursor.mergeCharFormat(color_format);
+        //去掉空格
+        cursor.setPosition(postion - 1, QTextCursor::MoveAnchor);
+        cursor.movePosition(QTextCursor::NoMove, QTextCursor::MoveAnchor, 0);
+        cursor.deleteChar();
+        cursor.setPosition(postion, QTextCursor::MoveAnchor);
+        cursor.movePosition(QTextCursor::NoMove, QTextCursor::MoveAnchor, 0);
+        cursor.deleteChar();
     }
     for (it = error.begin(); it != end; it++) { //错误记录生成超链接
-        flag = false;
 
         ui.output_text->append(QString("<html><p><a href=\"goto://setp?record_index=%1\">%2:%3</a></p></html>").arg(record_index).arg(it->first).arg(QString::fromLocal8Bit(it->second.data())));
     }

@@ -28,9 +28,6 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="include">
-      <UniqueIdentifier>{69a007d7-05d0-4fb6-b413-b5f953aad87d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,12 +47,6 @@
     </ClCompile>
     <ClCompile Include="AnalysisStep.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ExpressionCheck.cpp">
-      <Filter>include</Filter>
-    </ClCompile>
-    <ClCompile Include="PriorityTable.cpp">
-      <Filter>include</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,12 +86,6 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ExpressionCheck.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PriorityTable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_AnalysisStep.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
